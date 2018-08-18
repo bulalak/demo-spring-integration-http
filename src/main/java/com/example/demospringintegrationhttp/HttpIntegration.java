@@ -15,7 +15,6 @@ public class HttpIntegration {
     @Bean
     public IntegrationFlow multipartForm() {
         return IntegrationFlows.from(Http.inboundChannelAdapter("/documents")
-                .errorChannel("rest.general.error")
                 .statusCodeExpression(HttpStatus.NO_CONTENT.toString())
                 .requestMapping(m -> m
                         .methods(HttpMethod.POST)

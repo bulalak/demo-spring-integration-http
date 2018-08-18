@@ -32,8 +32,6 @@ public class DemoSpringIntegrationHttpApplicationTests {
 
         this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
                 .apply(documentationConfiguration(restDocumentation)
-                        .uris().withHost("localhost").withScheme("http").withPort(8080)
-                        .and()
                         .operationPreprocessors().withRequestDefaults(prettyPrint()).withResponseDefaults(prettyPrint())
                 )
                 .build();
